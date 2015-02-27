@@ -9,7 +9,7 @@ public class Driver1{
 		{
 			s = new Submission(); 
 			System.out.println("Adding Submission with id: " + s.getId());
-			Queue.add( new Submission());
+			Queue.add( s);
 		}
 		for( int i = 0; i < 5; i++)
 		{
