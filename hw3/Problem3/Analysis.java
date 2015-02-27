@@ -4,6 +4,26 @@ interface Logging
 	public void log(String msg);
 }
 
+class LogFactory
+{
+	public static Logging getInstance (String type)
+	{
+		Logging logfile;
+		switch (type.toLowerCase())
+		{
+			case "text" : logfile = new LogText();
+						  break;
+			case "xml"  : logfile = new LogXML();
+			              break;
+			case "html" : logfile = new LogHTML();
+			              break;
+			default     : logfile = new LogText();
+			              break;
+		}
+		return logfile;
+	}
+}
+
 class LogText implements Logging
 {
 	public LogText()
@@ -50,15 +70,7 @@ class Analysis
 			System.exit(-1);
 		}
 		String type = args[0];
-		Logging logfile;
-		if (type.equalsIgnoreCase("text"))
-			logfile = new LogText();
-		else if (type.equalsIgnoreCase("xml"))
-			logfile = new LogXML();
-		else if (type.equalsIgnoreCase("html"))
-			logfile = new LogHTML();
-		else
-			logfile = new LogText();
+		Logging logfile = LogFactory.getInstance(type);
 		logfile.log("Starting application...");
 
 		System.out.println("... read in data file to analyze ...");
