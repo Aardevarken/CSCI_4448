@@ -17,7 +17,7 @@ public class Queue
 	}
 	public static Submission process()
 	{
-		if( queue == null)
+		if( queue == null || submissions.isEmpty())
 		{
 			return null;
 		}
