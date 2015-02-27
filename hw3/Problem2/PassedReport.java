@@ -1,4 +1,4 @@
-public class PassedReport extends ReportObserver
+public class PassedReport extends Report
 {
 	private int testsPassed;
 
