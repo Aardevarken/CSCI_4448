@@ -3,6 +3,7 @@ import java.io.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.imageio.*;
+import java.util.HashMap;
 
 interface Terrain
 {
@@ -34,11 +35,16 @@ class Tree implements Terrain
 }
 class TreeFactory
 {
-	private static final ArrayList<Tree> mylist = new ArrayList<Tree>();
+	private static final HashMap<String, Tree> treemap = new HashMap <String, Tree>();
 	public static Terrain getTree(String type)
 	{
-		Tree tree = new Tree(type);
-		mylist.add(tree);
+		Tree tree;
+		if( treemap.get(type) == null)
+		{ 
+			tree = new Tree(type);
+			treemap.put(type,tree);
+		}
+		else{ tree = treemap.get(type);}
 		return tree;
    }
 }
