@@ -1,4 +1,4 @@
-public class TimeoutReport extends ReportObserver
+public class TimeoutReport extends Report
 {
 	private int timeoutErrors;
 

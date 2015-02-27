@@ -14,7 +14,7 @@ public class Submission
 	private boolean lastErrorWasTimeout;
 
     // You may add attributes to this class if necessary
-    private List<ReportObserver> reports = new ArrayList<ReportObserver>();
+    private List<Observer> reports = new ArrayList<Observer>();
     private boolean lastTestPassed;
 
 	public Submission()
@@ -35,7 +35,7 @@ public class Submission
 		
 		// You can add to the end of this method for reporting purposes
 		lastTestPassed = passed;
-		updateReports();
+		update();
 	}
 	
     public boolean wasTimeoutError()
@@ -43,14 +43,19 @@ public class Submission
 	    return lastErrorWasTimeout;
 	}
 
-	public void attach(ReportObserver report)
+	public void attach(Observer report)
 	{
 		reports.add(report);
 	}
 
-	private void updateReports()
+	public void detatch(Observer report)
 	{
-		for (ReportObserver report : reports)
+		reports.remove(report);
+	}
+
+	private void update()
+	{
+		for (Observer report : reports)
 		{
 			report.update();
 		}
