@@ -1,3 +1,5 @@
+/** Modified by Morgan Garske and Andrey Shprengel for HW3 CSCI 4448 Spring 2015 **/
+
 import java.util.*;
 import java.io.*;
 import java.awt.*;

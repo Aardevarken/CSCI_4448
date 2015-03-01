@@ -1,3 +1,5 @@
+/** Modified by Morgan Garske and Andrey Shprengel for HW3 CSCI 4448 Spring 2015 **/
+
 interface Logging
 {
 	public enum LOG_TYPE {TXT, XML, HTML};
@@ -9,6 +11,7 @@ class LogFactory
 	public static Logging getInstance (String type)
 	{
 		Logging logfile;
+		System.out.println("Factory creating " + type + " log.");
 		switch (type.toLowerCase())
 		{
 			case "text" : logfile = new LogText();
@@ -70,7 +73,9 @@ class Analysis
 			System.exit(-1);
 		}
 		String type = args[0];
+		System.out.println("Asking LogFactory to create " + type + " log");
 		Logging logfile = LogFactory.getInstance(type);
+		System.out.println("Factory created Logging object with type " + logfile.getClass());
 		logfile.log("Starting application...");
 
 		System.out.println("... read in data file to analyze ...");

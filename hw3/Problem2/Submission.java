@@ -2,6 +2,8 @@
 * Submission.java
 *
 * A representation of a Submission
+* Modified by Morgan Garske and Andrey Shprengel for HW3 CSCI 4448 Spring 2015
+*
 */
 
 import java.util.Random;
