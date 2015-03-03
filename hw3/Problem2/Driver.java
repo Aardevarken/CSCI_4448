@@ -1,4 +1,4 @@
-
+/** Created by Morgan Garske and Andrey Shprengel for HW3 CSCI 4448 Spring 2015 **/
 
 class Driver
 {
@@ -16,8 +16,10 @@ class Driver
 			System.out.println("\tTest passed: " + Boolean.toString(sub.didLastTestPass()));
 			System.out.println("\tError timeout: " + Boolean.toString(sub.wasLastErrorTimeout()));
 		}
-
+		System.out.println("Printing reports...");
+		System.out.println("From PassedReport:");
 		passed.printReport();
+		System.out.println("From TimeoutReport:");
 		timeout.printReport();
 	}
 }
