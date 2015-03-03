@@ -13,7 +13,7 @@ public class QueueSingleton
 		{
 			queue = new QueueSingleton();
 		}
-		return QueueSingleton;
+		return queue;
 	}
 	public void add(Submission s)
 	{
@@ -29,7 +29,4 @@ public class QueueSingleton
 		return submissions.removeFirst();
 		
 	}
-
-		
-		
-	}
+}

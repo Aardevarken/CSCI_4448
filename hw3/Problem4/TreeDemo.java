@@ -44,7 +44,11 @@ class TreeFactory
 			tree = new Tree(type);
 			treemap.put(type,tree);
 		}
-		else{ tree = treemap.get(type);}
+		else{ 
+			tree = treemap.get(type);
+			System.out.println("Getting existing tree of type:  " + type);
+			}
+		
 		return tree;
    }
 }
